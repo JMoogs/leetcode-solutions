@@ -1,18 +1,18 @@
 impl Solution {
     pub fn fizz_buzz(n: i32) -> Vec<String> {
-        let mut ans: Vec<String> = Vec::new();
-        for i in 1..n+1 {
-            if i % 3 == 0 && i % 5 == 0 {
-                ans.push(String::from("FizzBuzz"))
-            } else if i % 3 == 0 {
-                ans.push(String::from("Fizz"))
+        let mut v = Vec::with_capacity(n as usize);
+        for i in 1..(n + 1) {
+            if i % 15 == 0 {
+                v.push(String::from("FizzBuzz"))
             } else if i % 5 == 0 {
-                ans.push(String::from("Buzz"))
+                v.push(String::from("Buzz"))
+            } else if i % 3 == 0 {
+                v.push(String::from("Fizz"))
             } else {
-                ans.push(i.to_string())
+                v.push(i.to_string())
             }
-        
         }
-        ans
+        return v;
     }
+
 }
